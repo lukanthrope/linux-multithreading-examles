@@ -12,14 +12,14 @@ int main() {
   int count = 1;
   float eps = 0.00001;
 
-  std::cout << "Пріорітет процесу: ";
+  std::cout << "Process priority: ";
   std::cin >> prior;
   char cmd[256];
   sprintf(cmd, "renice %d %d", prior, (int)getpid());
   cout << cmd << endl;
   system(cmd);
 
-  std::cout <<"Кількість потоків: ";
+  std::cout <<"Number of threads: ";
   std::cin >> count;
 
   float a = -1.0;
@@ -39,7 +39,7 @@ int main() {
 
 
   t = clock() - t;
-  cout << "Час виконання процесу = " << float(t) / CLOCKS_PER_SEC << "s" << endl;
+  cout << "Time  = " << float(t) / CLOCKS_PER_SEC << "s" << endl;
 
   for (int i = 0; i < threads.size(); ++i)
     delete threads[i];
