@@ -13,26 +13,26 @@ public:
   CThread() : started(false) {}
 
   virtual ~CThread() {
-    if(started)
+    if (started)
       pthread_join(thread, NULL);
   }
 
   int Start() {
-    if(started) pthread_join(thread, NULL);
+    if (started) pthread_join(thread, NULL);
 
     int err = pthread_create(&thread, NULL, &ThreadMethod, this);
-    if(err) cout << "Error (" << err << ") thread creating!" << endl;
+    if (err) cout << "Error (" << err << ") thread creating!" << endl;
 
     return err;
   }
 
   void SetPriority(int set) {
-    if(started)
+    if (started)
       pthread_setschedprio(thread, set);
   }
 
   void Wait() {
-    if(started)
+    if (started)
       pthread_join(thread, NULL);
   }
 
@@ -42,7 +42,7 @@ public:
 
 protected:
 
-  virtual void Execute(void) {}
+  virtual void Execute() {}
 
 private:
 

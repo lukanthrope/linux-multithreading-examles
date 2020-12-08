@@ -24,8 +24,8 @@ public:
     } 
   }
 
-  void Execute(void) {
-    for(float x = a; x < b; x += step) {
+  void Execute() {
+    for (float x = a; x < b; x += step) {
       int   n = 2;
       float iter = 0,
             y = 1;
@@ -36,7 +36,7 @@ public:
         y += iter;
         ++n;
       }
-      while(fabs(iter) >= eps && n < 1000);
+      while (fabs(iter) >= eps && n < 1000);
 
       float yy = 1 / pow(1 + x, 0.5);
       std::cout << "x = " << x << ";   y = " << y << ";   F_teylor = " << yy << ";" << endl;
