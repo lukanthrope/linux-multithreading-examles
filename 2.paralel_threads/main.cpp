@@ -1,7 +1,6 @@
 #include <iostream> 
 #include <stdlib.h>
 #include <stdio.h>
-#include <functional>
 #include <pthread.h>
 
 const int MAX_THREAD_COUNT = 8;
