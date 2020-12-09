@@ -22,7 +22,7 @@ void *threadFunction(void *param) {
 }
 
 
-int main() {
+extern int main() {
 
   randomArray();
   printArray();
