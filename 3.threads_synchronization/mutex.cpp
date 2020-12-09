@@ -21,8 +21,7 @@ void *threadFunction(void *param) {
   return 0;
 }
 
-
-extern int main() {
+int main() {
 
   randomArray();
   printArray();
